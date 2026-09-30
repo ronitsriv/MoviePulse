@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pydantic
+httpx
+streamlit
+google-genai
+python-dotenv
