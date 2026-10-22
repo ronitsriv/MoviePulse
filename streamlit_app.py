@@ -13,6 +13,9 @@ import httpx
 import streamlit as st
 
 FASTAPI_URL = os.environ.get("FASTAPI_URL", "http://localhost:8000")
+if not FASTAPI_URL.startswith(("http://", "https://")):
+    FASTAPI_URL = f"https://{FASTAPI_URL}"
+FASTAPI_URL = FASTAPI_URL.rstrip("/")
 
 st.set_page_config(page_title="MoviePulse", page_icon="🎬")
 

@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: moviepulse-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.4
+      - key: GEMINI_API_KEY
+        sync: false
+
+  - type: web
+    name: moviepulse-ui
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run streamlit_app.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.4
+      - key: FASTAPI_URL
+        fromService:
+          type: web
+          name: moviepulse-api
+          property: host

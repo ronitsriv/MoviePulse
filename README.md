@@ -73,6 +73,24 @@ which is the part of this project meant to demonstrate backend development.
    http://localhost:8501
    ```
 
+## Deploy on Render
+
+The repository includes a Render Blueprint (`render.yaml`) that creates two
+web services: the FastAPI backend and the Streamlit frontend.
+
+1. Push this repository to GitHub and create a new Blueprint in the
+   [Render Dashboard](https://dashboard.render.com/).
+2. Select this repository and confirm the Blueprint.
+3. When prompted, enter `GEMINI_API_KEY` for the backend service. Keep this
+   secret out of GitHub and do not put it in `.env.example`.
+4. Wait for both services to deploy. Open the `moviepulse-ui` service URL.
+
+The Blueprint connects the frontend to the backend automatically. The
+services use Render's free plan, which may spin down when idle and take about
+a minute to wake up. Free-tier Gemini quotas and Google Search grounding
+availability still apply; public visitors can use the app's recommendation
+endpoint, so monitor usage and billing before sharing it widely.
+
 ### API docs
 
 FastAPI automatically generates interactive Swagger docs. While the backend
