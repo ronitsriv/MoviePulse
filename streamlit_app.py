@@ -17,7 +17,7 @@ FASTAPI_URL = os.environ.get("FASTAPI_URL", "http://localhost:8000")
 st.set_page_config(page_title="MoviePulse", page_icon="🎬")
 
 st.title("🎬 MoviePulse")
-st.write("Tell us what kind of movies you enjoy.")
+st.write("What kind of movie you are in the mood to watch?")
 
 preference = st.text_area(
     "Your movie taste",

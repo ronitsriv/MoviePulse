@@ -18,7 +18,7 @@ from google.genai import types
 
 from app.models.recommendation import Movie, RecommendationsResponse
 
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.8-flash"
 
 
 class GeminiServiceError(Exception):
