@@ -12,7 +12,7 @@ router = APIRouter()
 
 
 @router.post("/recommendations", response_model=RecommendationsResponse)
-async def recommendations(request: PreferenceRequest) -> RecommendationsResponse:
+def recommendations(request: PreferenceRequest) -> RecommendationsResponse:
     preference = request.preference.strip()
     if not preference:
         raise HTTPException(status_code=400, detail="preference must not be empty.")
