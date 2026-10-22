@@ -75,6 +75,12 @@ which is the part of this project meant to demonstrate backend development.
 
 ## Deploy on Render
 
+MoviePulse is live:
+
+- **App:** [moviepulse-ui.onrender.com](https://moviepulse-ui.onrender.com)
+- **API health:** [moviepulse-api-obl7.onrender.com/health](https://moviepulse-api-obl7.onrender.com/health)
+- **Interactive API docs:** [moviepulse-api-obl7.onrender.com/docs](https://moviepulse-api-obl7.onrender.com/docs)
+
 The repository includes a Render Blueprint (`render.yaml`) that creates two
 web services: the FastAPI backend and the Streamlit frontend.
 
